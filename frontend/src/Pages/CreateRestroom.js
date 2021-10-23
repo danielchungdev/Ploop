@@ -9,7 +9,7 @@ import { Slider, RadioGroup, FormControlLabel, Radio } from '@mui/material'
 import Button from '../Components/Button'
 
 export default function CreateRestroom() {
-
+    const [name, setName] = useState("")
     const [cleanliness, setCleanliness] = useState(1);
     const [ambience, setAmbience] = useState(1);
     const [crowdiness, setCrowdiness] = useState(50)
@@ -28,16 +28,29 @@ export default function CreateRestroom() {
         setBabyStation(event.target.value)
     }
 
+    const bathroomName = (event) => {
+        setName(event.target.value)
+    }
+
+    const submitForm = () => {
+        console.log(cleanliness)
+        console.log(ambience)
+        console.log(crowdiness)
+        console.log(dryingValue)
+        console.log(babyStation)
+        alert("I've been clicked")
+    }
+
     return (
         <div>
             <Navbar/>
             <div class="create--container">
                 <form action="submit" className="create--form">
                     <div>
-                        <Input label="Location Name"/>
+                        <Input label="Location Name" onChange={bathroomName}/>
                     </div>
                     <div>
-                    <Typography component="legend">Cleanliness</Typography>
+                    <Typography component="legend">Cleanliness {name}</Typography>
                     <Rating
                         name="simple-controlled"
                         value={cleanliness}
@@ -90,7 +103,7 @@ export default function CreateRestroom() {
                     </div>
                 </form>
                 <div class="button-container">
-                    <Button>Create Bathroom</Button>
+                    <Button onClick={submitForm}>Create Bathroom</Button>
                 </div>
             </div>
         </div>
