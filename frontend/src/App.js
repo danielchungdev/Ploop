@@ -19,39 +19,40 @@ import Signup from './Pages/Signup.js'
 function App() {
   return (
     <Router>
+      <Switch>
       {/** Landing Page*/}
-      <Route path = "/signin" >
-        <Signin/>
-      </Route>
+        <Route path = "/signin" >
+          <Signin/>
+        </Route>
 
-      {/** Signup Page*/}
-      <Route path = "/signup">
-        <Signup/>
-      </Route>
+        {/** Signup Page*/}
+        <Route path = "/signup">
+          <Signup/>
+        </Route>
 
-      {/**Home Page*/}
-      <Route path = "/" exact>
-        <Home/>
-      </Route>
-
-
-      {/** Create Restroom Page*/}
-      <Route path = "/create-restroom">
-        <CreateRestroom/>
-      </Route>
+        {/**Home Page*/}
+        <Route path = "/" exact>
+          <Home/>
+        </Route>
 
 
-      {/** Settings Page*/}
-      <Route path = "/settings">
-        <Settings/>
-      </Route>
+        {/** Create Restroom Page*/}
+        <Route path = "/create-restroom">
+          <CreateRestroom/>
+        </Route>
 
 
-      {/** Restroom Page*/}
-      <Route path = "/restroom">
-        <Restroom/>
-      </Route>
+        {/** Settings Page*/}
+        <Route path = "/settings">
+          <Settings/>
+        </Route>
 
+
+        {/** Restroom Page*/}
+        <Route path = "/restroom">
+          <Restroom/>
+        </Route>
+      </Switch>
     </Router>
   );
 }
