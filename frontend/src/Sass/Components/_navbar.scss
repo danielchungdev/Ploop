@@ -1,0 +1,13 @@
+
+.navbar--container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20% 60% 20%;
+    height: 10vh;
+}
+
+.navbar--container img{
+    grid-column-start: 2;
+    justify-self: center;
+    align-self: center;
+}

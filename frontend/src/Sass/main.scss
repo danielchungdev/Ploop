@@ -1,10 +1,11 @@
 @import "./Abstracts/variables";
 @import "./Components/button";
 @import "./Components/restroomcard";
+@import "./Components/navbar";
+@import "./Pages/home";
 
 *{
   margin: 0;
   padding: 0;
-
   font-family: $font-family;
 }

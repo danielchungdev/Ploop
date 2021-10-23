@@ -1,6 +1,7 @@
 import React from 'react'
 import RestroomCard from '../Components/RestroomCard'
-
+import Navbar from '../Components/Navbar'
+import Button from '../Components/Button'
 class Home extends React.Component{
     
     componentDidMount(){
@@ -20,8 +21,11 @@ class Home extends React.Component{
 
     render(){
         return(<div>
-            home
-            <RestroomCard/>
+            <Navbar/>
+            <div class="home--container">
+                <Button>Rate a Restroom</Button>
+                <RestroomCard/>
+            </div>
         </div>)
     }
 }
