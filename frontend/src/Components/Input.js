@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import '../Sass/main.scss'
 
 class Input extends React.Component{
@@ -7,10 +7,13 @@ class Input extends React.Component{
     }
 
     render(){
+        let {label} = this.props;
        return(
             <div class = "input-container">
-                <p class = "input-label">Username</p>
-                <input class = "input" type = "text"/>
+                <div>
+                <p class = "label">{label}</p>
+                <input class = "input" type = "text" />
+                </div>
             </div>
         )
     }

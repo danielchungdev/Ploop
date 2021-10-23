@@ -6,7 +6,7 @@ class Signup extends React.Component{
     render(){
         return(<div>
             sign up
-            <Input></Input>
+            <Input label = "Username"/>
         </div>)
     }
 }
