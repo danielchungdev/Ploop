@@ -20,7 +20,7 @@ export default function Signin(){
     const login = (e) => {
         e.preventDefault();
         fetch('http://localhost:4000/login', {
-            method: "POST",
+            method: "GET",
             headers:{
                 "Content-Type": "application/json", 
             },
@@ -43,9 +43,11 @@ export default function Signin(){
             console.log(error);
         })
 
-        const history = useHistory();
-        
+
     }
+    
+    const history = useHistory();
+
 
     return(
         <div className = "signin--container" >
