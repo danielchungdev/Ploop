@@ -1,6 +1,6 @@
 import React from 'react'
-import RestroomCard from '../components/RestroomCard'
-import Button from '../components/Button'
+import RestroomCard from '../Components/RestroomCard'
+import Button from '../Components/Button'
 
 class Home extends React.Component{
     render(){

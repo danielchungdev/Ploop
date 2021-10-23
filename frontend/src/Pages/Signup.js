@@ -1,13 +1,12 @@
 import React from 'react'
-import Button from '../components/Button'
-
+import Button from '../Components/Button'
+import Input from '../Components/Input'
 
 class Signup extends React.Component{
     render(){
         return(<div>
             sign up
-            <Button>Log in</Button>
-
+            <Input></Input>
         </div>)
     }
 }
