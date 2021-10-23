@@ -1,46 +1,58 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
-
+import { useState } from 'react'
 import Input from '../Components/Input'
-import RateStars from '../Components/RateStars'
-
 import '../Sass/main.scss'
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
+import { Slider } from '@mui/material'
 
-class CreateRestroom extends React.Component{
-    render(){
-        return(<div>
-            <Navbar/>
-            <div className = "create--container">
-    
+export default function CreateRestroom() {
 
-<form>
-    <Input label="Location Name"/>
-    <RateStars label = "Cleanliness"/>
-    <RateStars label = "Ambiance"/>
+    const [cleanliness, setCleanliness] = useState(1);
+    const [ambience, setAmbience] = useState(1);
+    const [crowdiness, setCrowdiness] = useState(50)
 
-    <div className = "label" style = {{marginTop:'4vh'}}>Baby Station</div>
-                    <div class="radio-container">
-                        <div><input type="radio" name="male" value="0"/> Yes</div>
-                        <div><input type="radio" name="male" value="1"/> No</div>
-                    </div>
-
-                    <div className = "label" style = {{marginTop:'4vh'}}>Drying Method</div>
-                    <div class="radio-container">
-                        <div><input type="radio" name="male" value="0"/> Paper Towels</div>
-                        <div><input type="radio" name="male" value="1"/> Blow Dryer</div>
-                        <div><input type="radio" name="male" value="2"/> None</div>
-                    </div>
-
-
-                
-                <input type="file" className = "create--upload--file">
-
-                </input>
-
-
-</form>
-            </div>
-        </div>)
+    const handleSlider = (event, newValue) => {
+        setCrowdiness(newValue)
     }
+
+    return (
+        <div>
+            <Navbar/>
+            <div class="create--container">
+                <form action="submit" className="create--form">
+                    <div>
+                        <Input label="Location Name"/>
+                    </div>
+                    <div>
+                    <Typography component="legend">Cleanliness</Typography>
+                    <Rating
+                        name="simple-controlled"
+                        value={cleanliness}
+                        onChange={(event, newValue) => {
+                            setCleanliness(newValue);
+                        }}
+                    />
+                    </div>
+                    <div>
+                        <Typography component="legend">Ambience</Typography>
+                        <Rating
+                            name="simple-controlled"
+                            value={ambience}
+                            onChange={(event, newValue) => {
+                                setAmbience(newValue);
+                            }}
+                        />
+                    </div>
+
+                    <div>
+                        <Typography component="legend">Crowdiness</Typography>
+                        <Slider value={crowdiness} onChange={handleSlider}/>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    )
 }
-export default CreateRestroom
