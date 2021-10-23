@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './Sass/main.scss';
 
@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom'
 
 //Import Routes
@@ -17,51 +16,24 @@ import Restroom from './Pages/Restroom.js'
 import Settings from './Pages/Settings.js'
 import Signin from './Pages/Signin.js'
 import Signup from './Pages/Signup.js'
-
-import axos from 'axios'
-import axios from 'axios';
-
-
+import {UserContext} from './UserContext';
 
 function App() {
 
+  const [user, setUser] = useState(null);
 
   return (
     <Router>
-      <Switch>
-      {/** Landing Page*/}
-        <Route path = "/signin" >
-          <Signin/>
-        </Route>
-
-        {/** Signup Page*/}
-        <Route path = "/signup">
-          <Signup/>
-        </Route>
-
-        {/**Home Page*/}
-        <Route path = "/" exact>
-          <Home/>
-        </Route>
-
-
-        {/** Create Restroom Page*/}
-        <Route path = "/create-restroom">
-          <CreateRestroom/>
-        </Route>
-
-
-        {/** Settings Page*/}
-        <Route path = "/settings">
-          <Settings/>
-        </Route>
-
-
-        {/** Restroom Page*/}
-        <Route path = "/:id">
-          <Restroom/>
-        </Route>
-      </Switch>
+		<UserContext.Provider value={{user, setUser}}>
+			<Switch>
+				<Route exact path="/signin" component={Signin}></Route>
+				<Route exact path="/signup" component={Signup}></Route>
+				<Route exact path="/" component={Home}></Route>
+				<Route exact path="/create-restroom" component={CreateRestroom}></Route>
+				<Route exact path="/settings" component={Settings}></Route>
+				<Route path="/:id" component={Restroom}></Route>
+			</Switch>
+		</UserContext.Provider>
     </Router>
   );
 }
