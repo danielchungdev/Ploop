@@ -1,2 +1,2 @@
-# Ploop
-Find your next poop location!
+# Ploop 💩
+Creating a better, pooping experience for everyone!
