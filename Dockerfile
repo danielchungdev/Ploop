@@ -8,4 +8,5 @@ WORKDIR backend/flaskapp
 COPY . backend/flaskapp
 RUN pip --no-cache-dir install -r backend/requirements.txt
 
+# Running Command
 CMD ["python3", "flaskapp.py"]
