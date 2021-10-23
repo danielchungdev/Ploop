@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../Assets/Ploop.svg'
 
 import '../Sass/main.scss'
-
+import { Link } from 'react-router-dom'
 
 import Button from '../Components/Button'
 import Input from '../Components/Input'
@@ -28,7 +28,7 @@ class Signin extends React.Component{
             <Button>Log In</Button>
             
         <div className = "forgot--password">
-            Don't have an account? &#160;<p className = "signin--link">Sign up</p>
+            Don't have an account? &#160;<Link to="/signup" className = "signin--link">Sign up</Link>
             </div>
 
 </form>
