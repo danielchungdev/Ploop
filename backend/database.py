@@ -4,7 +4,7 @@ import boto3
 USER_DATABASE       = "DandyHacks__ploop_user_database"
 BATHROOM_DATABASE   = "DandyHacks__ploop_bathroom_database"
 
-dynamo_client = boto3.client("dynamodb")
+dynamo_client = boto3.client("dynamodb", region_name='us-west-2')
 
 # -------------------------------------------------
 # User Methods
