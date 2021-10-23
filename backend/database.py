@@ -14,7 +14,20 @@ def get_users():
     user = dynamo_client.scan(
         TableName=USER_DATABASE
     )
-    return user["Items"]
+    user_list = {
+        'users' : {}
+    }
+    for item in user["Items"]:
+        username = item["username"]["S"]
+        password = item["password"]["S"]
+        email = item["email"]["S"]
+        gender = item["gender"]["S"]
+        user_list["users"][username] = {
+            "password" : password,
+            "email" : email,
+            "gender" : gender
+        }
+    return user_list
 
 def get_user(username):
     user = dynamo_client.get_item(
@@ -48,11 +61,44 @@ def add_user(username, password, gender, email):
         'email' : email
     }
 
-def edit_user(username):
-    pass
+def edit_user(username, request_body):
+    user = get_user(username)
+    editted_user = {
+        'username' : { "S" : username },
+        'password' : { "S" : user["password"]["S"] },
+        'gender' : { "S" : user["gender"]["S"] },
+        'email' : { "S" : user["email"]["S"] }
+    }
+    if "password" in request_body:
+        editted_user['password']["S"] = request_body['password']
+    if "gender" in request_body:
+        editted_user['gender']["S"] = request_body['gender']
+    if "email" in request_body:
+        editted_user['email']["S"] = request_body['email']
+    dynamo_client.put_item(
+        TableName=USER_DATABASE,
+        Item=editted_user,
+    )
+    return {
+        'username' : username,
+        'password' : editted_user['password']["S"],
+        'gender' : editted_user['gender']["S"],
+        'email' : editted_user['email']["S"]
+    }
 
 def delete_user(username):
-    pass
+    dynamo_client.delete_item(
+        TableName=USER_DATABASE,
+        Key={
+            "username" : {
+                "S" : username
+            }
+        }
+    )
+    return {
+        'username' : username
+    }
+
 
 # -------------------------------------------------
 # Bathroom Methods

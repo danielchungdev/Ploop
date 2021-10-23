@@ -40,8 +40,21 @@ def post_user_route(username):
 	except Exception:
 		return "Insufficient Request Body", 404
 	return added_user
-	
 
+@app.route("/api/user/<string:username>", methods=['PUT'])
+def put_user_route(username):
+	request_data = request.get_json()
+	editted_user = edit_user(username, request_data)
+	return editted_user
+
+@app.route("/api/user/<string:username>", methods=['DELETE'])
+def delete_user_route(username):
+	user_exists_check = get_user(username)
+	if user_exists_check != None:
+		return "User Doesn't Exist", 404
+	delete_user(username)
+	return "User Deleted Successfully", 200
+	
 # -------------------------------------------------
 # Bathroom Routes
 # -------------------------------------------------
