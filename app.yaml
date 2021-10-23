@@ -1,4 +1,4 @@
-runtime: 
+runtime: python
 python27api_version: 
 1threadsafe: true
 env: flex
