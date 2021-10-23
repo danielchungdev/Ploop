@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import logo from '../Assets/Ploop.svg'
 
 import '../Sass/main.scss'
@@ -7,10 +7,14 @@ import { Link } from 'react-router-dom'
 import Button from '../Components/Button'
 import Input from '../Components/Input'
 
-import { Typography } from '@material-ui/core'
+import axios from "axios";
 
-class Signin extends React.Component{
-    render(){
+
+import { Typography } from '@material-ui/core'
+import { SettingsSharp } from '@material-ui/icons'
+
+export default function Signin(){
+
         return(
             <div className = "signin--container" >
                 <img src={logo} alt="Ploop Logo"  className="signin--logo"/>
@@ -32,5 +36,3 @@ class Signin extends React.Component{
             </div>
         )
     }
-}
-export default Signin
