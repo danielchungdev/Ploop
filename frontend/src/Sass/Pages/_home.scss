@@ -1,0 +1,20 @@
+
+.home--container{
+    height: 85vh;
+    display: grid;
+    grid-template-rows: 20% 5% 75%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.restrooms--near{
+    grid-row-start: 3;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.home--title{
+    font-size: 1.5rem;
+}

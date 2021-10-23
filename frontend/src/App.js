@@ -1,24 +1,61 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './Sass/main.scss';
+
+//Import React Router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+
+//Import Routes
+import Home from './Pages/Home.js'
+import CreateRestroom from './Pages/CreateRestroom.js'
+import Restroom from './Pages/Restroom.js'
+import Settings from './Pages/Settings.js'
+import Signin from './Pages/Signin.js'
+import Signup from './Pages/Signup.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+      {/** Landing Page*/}
+        <Route path = "/signin" >
+          <Signin/>
+        </Route>
+
+        {/** Signup Page*/}
+        <Route path = "/signup">
+          <Signup/>
+        </Route>
+
+        {/**Home Page*/}
+        <Route path = "/" exact>
+          <Home/>
+        </Route>
+
+
+        {/** Create Restroom Page*/}
+        <Route path = "/create-restroom">
+          <CreateRestroom/>
+        </Route>
+
+
+        {/** Settings Page*/}
+        <Route path = "/settings">
+          <Settings/>
+        </Route>
+
+
+        {/** Restroom Page*/}
+        <Route path = "/:id">
+          <Restroom/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
