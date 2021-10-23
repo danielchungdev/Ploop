@@ -1,5 +1,7 @@
 import boto3
-from werkzeug.wrappers import request
+from helpers import (
+	find_distance
+)
 
 # Constants
 USER_DATABASE_NAME      = "DandyHacks__ploop_user_database"
@@ -116,6 +118,7 @@ def get_bathrooms():
         baby_station = item["baby_station"]
         drying_method = item["drying_method"]
         location_name = item["location_name"]
+        gender = item["gender"]
         bathroom_list["bathrooms"][str(bathroom_id)] = {
             "longitude" : longitude,
             "latitude" : latitude,
@@ -126,7 +129,8 @@ def get_bathrooms():
             "floor" : floor,
             "baby_station" : baby_station,
             "drying_method" : drying_method,
-            "location_name" : location_name
+            "location_name" : location_name,
+            "gender" : gender
         }
     return bathroom_list
 
@@ -154,7 +158,8 @@ def add_bathroom(bathroom_id, data):
         "floor" : data["floor"],
         "baby_station" : data["baby_station"],
         "drying_method" : data["drying_method"],
-        "location_name" : data["location_name"]
+        "location_name" : data["location_name"],
+        "gender" : data["gender"]
     }
     BATHROOM_DATABASE.put_item(
         Item=bathroom
@@ -174,7 +179,8 @@ def edit_bathroom(bathroom_id, request_body):
         "floor" : bathroom["floor"],
         "baby_station" : bathroom["baby_station"],
         "drying_method" : bathroom["drying_method"],
-        "location_name" : bathroom["location_name"]
+        "location_name" : bathroom["location_name"],
+        "gender" : bathroom["gender"]
     }
     if "clean_rating" in request_body:
         editted_bathroom["clean_rating"] = request_body["clean_rating"]

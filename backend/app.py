@@ -1,16 +1,16 @@
 from flask import Flask, Response, jsonify, request
 from database import (
-  # User Methods
-  get_users,
-  get_user,
-  add_user,
-  edit_user,
-  delete_user,
-  # Bathroom Methods
-  get_bathrooms,
-  get_bathroom,
-  add_bathroom,
-  edit_bathroom
+	# User Methods
+	get_users,
+	get_user,
+	add_user,
+	edit_user,
+	delete_user,
+	# Bathroom Methods
+	get_bathrooms,
+	get_bathroom,
+	add_bathroom,
+	edit_bathroom
 )
 
 app = Flask(__name__)
@@ -87,7 +87,7 @@ def post_bathroom_route(bathroom_id):
 		return error_message("Insufficient Request Body"), 404
 	return added_bathroom
 
-@app.route("/api/bathroom/<int:bathroom_id>", methods=['POST'])
+@app.route("/api/bathroom/<int:bathroom_id>", methods=['PUT'])
 def put_bathroom_route(bathroom_id):
 	request_data = request.get_json()
 	editted_bathroom = edit_bathroom(bathroom_id, request_data)
