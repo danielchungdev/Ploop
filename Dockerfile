@@ -6,6 +6,7 @@ RUN apk add --no-cache python3-dev
 
 WORKDIR backend
 COPY . backend
+RUN source bin/activate/venv
 RUN pip install flask
 RUN pip install boto3
 
