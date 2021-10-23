@@ -13,6 +13,10 @@ import {
 import Home from './components/Home.js'
 import CreateRestroom from './components/CreateRestroom.js'
 import Restroom from './components/Restroom.js'
+import Settings from './components/Settings.js'
+import Signin from './components/Signin.js'
+import Signup from './components/Signup.js'
+
 
 
 
@@ -20,7 +24,38 @@ import Restroom from './components/Restroom.js'
 function App() {
   return (
     <Router>
-      <Route/>
+      {/** Landing Page*/}
+      <Route path = "/signin" exact>
+        <Signin/>
+      </Route>
+
+      {/** Signup Page*/}
+      <Route path = "/signup">
+        <Signup/>
+      </Route>
+
+      {/**Home Page*/}
+      <Route path = "/">
+        <Home/>
+      </Route>
+
+
+      {/** Create Restroom Page*/}
+      <Route path = "/create-restroom">
+        <CreateRestroom/>
+      </Route>
+
+
+      {/** Settings Page*/}
+      <Route path = "/settings">
+        <Settings/>
+      </Route>
+
+
+      {/** Restroom Page*/}
+      <Route path = "/restroom">
+        <Restroom/>
+      </Route>
 
     </Router>
   );
