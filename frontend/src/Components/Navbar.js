@@ -1,37 +1,85 @@
-import {React, useState} from 'react'
-import '../Sass/main.scss'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MailIcon from '@mui/icons-material/Mail'
+import InboxIcon from '@mui/icons-material/MoveToInbox';
 import logo from '../Assets/Ploop.svg'
-import {Dropdown, Menu} from 'antd'
 
+export default function TemporaryDrawer() {
+  const [state, setState] = React.useState({
+    left: false,
+  });
 
-const menu = (
-    <Menu>
-        <Menu.item key = '0'>
-<div>
-    hello
-</div>
-        </Menu.item>
-        <Menu.item key = '1'>
-<div>
-    hello
-</div>
-        </Menu.item>
-        <Menu.item key = '2'>
-<div>
-    hello
-</div>
-        </Menu.item>
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
 
-    </Menu>
-)
+    setState({ ...state, [anchor]: open });
+  };
 
-export default function Navbar() {
-    return (
-        <div className="navbar--container">
-            <img src={logo} alt="Ploop Logo"/>
-            <Dropdown overlay= {menu} trigger = {['click']}>
-                <button>Click me</button>
-            </Dropdown>
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  return (
+    <div className="navbar--container">
+        <img src={logo} alt="ploop logo"/>
+        <div className="burguer-menu">
+        {['right'].map((anchor) => (
+            <React.Fragment key={anchor}>
+            <Button 
+                onClick={toggleDrawer(anchor, true)} 
+                sx={{
+                    fontSize: "300%",
+                    color: "#7F5F20",
+                    
+                }}>
+                    =
+            </Button>
+            <Drawer
+                anchor={anchor}
+                open={state[anchor]}
+                onClose={toggleDrawer(anchor, false)}
+            >
+                {list(anchor)}
+            </Drawer>
+            </React.Fragment>
+        ))}
         </div>
-    )
+    </div>
+  );
 }

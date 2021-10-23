@@ -3,12 +3,18 @@
     display: grid;
     justify-content: center;
     grid-template-columns: 20% 60% 20%;
-    height: 15vh;
+    margin: 10% 0 0 0;
 }
 
 .navbar--container img{
     grid-column-start: 2;
     width: 90%;
+    justify-self: center;
+    align-self: center;
+}
+
+.burguer-menu{
+    grid-column-start: 3;
     justify-self: center;
     align-self: center;
 }

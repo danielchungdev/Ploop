@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './Sass/main.scss';
 
 //Import React Router
