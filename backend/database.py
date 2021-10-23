@@ -18,6 +18,12 @@ def get_users():
         TableName=USER_DATABASE
     )
 
+def get_user():
+    pass
+
+def edit_user():
+    pass
+
 # -------------------------------------------------
 # Bathroom Methods
 # -------------------------------------------------
