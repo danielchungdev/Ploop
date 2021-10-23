@@ -62,3 +62,5 @@ def delete_user_route(username):
 def get_bathrooms_route():
 	return jsonify(get_bathrooms()["Items"])
 
+if __name__ == '__main__':
+	app.run('0.0.0.0', 5433, debug=True)
