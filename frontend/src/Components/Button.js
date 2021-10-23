@@ -13,7 +13,7 @@ class Button extends React.Component{
         let background = this.props.background;
 
         return(
-            <button  className = "button" style = {{backgroundColor:background}}>
+            <button  className = "button" style = {{backgroundColor:background}} onClick = {this.props.onClick}>
                 <Typography component = "legend" className = "text">{Text}</Typography>
             </button>
         )
