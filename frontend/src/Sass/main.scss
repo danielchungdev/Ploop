@@ -3,9 +3,15 @@
 @import "./Components/restroomcard";
 @import "./Components/navbar";
 @import "./Pages/home";
+@import "./Pages/signin";
+
 @import "./Components/input";
+
+
 *{
   margin: 0;
   padding: 0;
   font-family: $font-family;
+
+  user-select: none;
 }
