@@ -24,7 +24,16 @@ class Home extends React.Component{
             <Navbar/>
             <div class="home--container">
                 <Button>Rate a Restroom</Button>
-                <RestroomCard/>
+                <p className="home--title">Nearby bathrooms</p>
+                <div class="restrooms--near">
+                    <RestroomCard distance="10m away" stars="*"/>
+                    <RestroomCard distance="10m away" stars="*****"/>
+
+                    <RestroomCard distance="10m away" stars="**"/>
+                    <RestroomCard distance="10m away" stars="****"/>
+                    <RestroomCard distance="10m away" stars="***"/>
+
+                </div>
             </div>
         </div>)
     }
