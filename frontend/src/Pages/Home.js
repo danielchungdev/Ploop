@@ -6,7 +6,7 @@ class Home extends React.Component{
         return(<div>
             home
 
-            
+            <RestroomCard/>
         </div>)
     }
 }
