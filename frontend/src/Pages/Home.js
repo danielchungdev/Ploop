@@ -3,12 +3,11 @@ import RestroomCard from '../Components/RestroomCard'
 
 class Home extends React.Component{
     render(){
-        return(
-            <div>
-                div
-                
-            </div>
-        )
+        return(<div>
+            home
+
+            
+        </div>)
     }
 }
 export default Home

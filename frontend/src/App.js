@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       {/** Landing Page*/}
-      <Route path = "/signin" exact>
+      <Route path = "/signin" >
         <Signin/>
       </Route>
 
@@ -31,7 +31,7 @@ function App() {
       </Route>
 
       {/**Home Page*/}
-      <Route path = "/">
+      <Route path = "/" exact>
         <Home/>
       </Route>
 
