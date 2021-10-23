@@ -10,12 +10,12 @@ import {
 } from 'react-router-dom'
 
 //Import Routes
-import Home from './components/Home.js'
-import CreateRestroom from './components/CreateRestroom.js'
-import Restroom from './components/Restroom.js'
-import Settings from './components/Settings.js'
-import Signin from './components/Signin.js'
-import Signup from './components/Signup.js'
+import Home from './Components/Home.js'
+import CreateRestroom from './Components/CreateRestroom.js'
+import Restroom from './Components/Restroom.js'
+import Settings from './Components/Settings.js'
+import Signin from './Components/Signin.js'
+import Signup from './Components/Signup.js'
 
 
 
