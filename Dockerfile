@@ -11,4 +11,4 @@ RUN pip install boto3
 
 # Running Command
 RUN cd backend
-CMD ["python3", "flaskapp.py"]
+CMD ["python3", "/home/plooptheapp/Ploop/backend/flaskapp.py"]
