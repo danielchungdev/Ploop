@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './Sass/main.scss';
 
 //Import React Router
