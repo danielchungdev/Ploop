@@ -7,7 +7,7 @@ ACCESS_KEY          = "AKIAQ3ULTGCRC327I5NF"
 SECRET_KEY          = "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"
 
 dynamo_client = boto3.client("dynamodb", 
-    region_name='us-west-2',
+    region_name='us-east-2',
     aws_access_key_id=ACCESS_KEY,
     aws_secret_access_key=SECRET_KEY
     )
