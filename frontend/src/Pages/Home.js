@@ -3,6 +3,8 @@ import RestroomCard from '../Components/RestroomCard'
 import Navbar from '../Components/Navbar'
 import Button from '../Components/Button'
 
+import { Typography } from '@material-ui/core'
+
 import {Link} from 'react-router-dom'
 
 class Home extends React.Component{
@@ -27,7 +29,7 @@ class Home extends React.Component{
             <Navbar/>
             <div class="home--container">
                 <Link to="/create-restroom" style = {{textDecoration:'none'}}><Button>Rate a Restroom</Button></Link>
-                <p className="home--title">Nearby bathrooms</p>
+                <Typography component="legend"  className="home--title">Nearby bathrooms</Typography>
                 <div class="restrooms--near">
                     <RestroomCard distance="10m away" stars="*" id = "1"/>
                     <RestroomCard distance="10m away" stars="*****" id = "5"/>

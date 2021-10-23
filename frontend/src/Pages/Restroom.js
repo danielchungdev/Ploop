@@ -6,6 +6,8 @@ import DefaultToilet from '../Assets/Defaults/toilet.png'
 import Star from '../Components/Star'
 import CommendCard from '../Components/CommentCard'
 
+import { Typography } from '@material-ui/core'
+
 import '../Sass/main.scss'
 
 
@@ -28,10 +30,10 @@ class Restroom extends React.Component{
 
 <div className = "restroom--ratings">
 
-            <p className = "restroom--info">Location: Location location location</p>
+            <Typography component="legend"  className = "restroom--info">Location: Location location location</Typography>
                     
             {/***Cleanliness */}
-            <div className = "restroom--info" style = {{marginTop:'2vh'}}>Cleanliness 
+            <Typography component="legend"  className = "restroom--info" style = {{marginTop:'2vh'}}>Cleanliness 
                 <div className = "star--display">
                     <Star size = "small"/>
                     <Star size = "small"/>
@@ -39,10 +41,10 @@ class Restroom extends React.Component{
                     <Star size = "small"/>
                     <Star size = "small"/>
                 </div>
-            </div>
+            </Typography>
 
             {/***Ambiance */}
-            <div className = "restroom--info">Ambiance 
+            <Typography component="legend"  className = "restroom--info">Ambiance 
                 <div className = "star--display">
                     <Star size = "small"/>
                     <Star size = "small"/>
@@ -50,10 +52,10 @@ class Restroom extends React.Component{
                     <Star size = "small"/>
                     <Star size = "small"/>
                 </div>
-            </div>
+            </Typography>
 
             {/***Crowdedness */}
-            <div className = "restroom--info">Crowdedness 
+            <Typography component="legend"  className = "restroom--info">Crowdedness 
                 <div className = "star--display">
                     <Star size = "small"/>
                     <Star size = "small"/>
@@ -61,10 +63,10 @@ class Restroom extends React.Component{
                     <Star size = "small"/>
                     <Star size = "small"/>
                 </div>
-            </div>
+            </Typography>
 
             {/***Lighting */}
-            <div className = "restroom--info">Lighting 
+            <Typography component="legend"  className = "restroom--info">Lighting 
                 <div className = "star--display">
                     <Star size = "small"/>
                     <Star size = "small"/>
@@ -72,15 +74,15 @@ class Restroom extends React.Component{
                     <Star size = "small"/>
                     <Star size = "small"/>
                 </div>
-            </div>
+            </Typography>
 
-            <p className = "restroom--info">Blowdrying: yes</p>
-            <p className = "restroom--info">Baby Station: yes</p>
-            <p className = "restroom--info">Visits: 0</p>
+            <Typography component="legend"  className = "restroom--info">Blowdrying: yes</Typography>
+            <Typography component="legend"  className = "restroom--info">Baby Station: yes</Typography>
+            <Typography component="legend"  className = "restroom--info">Visits: 0</Typography>
 
-        <p className = "restroom--info" style = {{marginTop:'4vh'}}>
+        <Typography component="legend"  className = "restroom--info" style = {{marginTop:'4vh'}}>
             Comments
-        </p>
+        </Typography>
         <CommendCard></CommendCard>
 
         </div>

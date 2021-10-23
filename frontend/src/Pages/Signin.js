@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import Button from '../Components/Button'
 import Input from '../Components/Input'
 
+import { Typography } from '@material-ui/core'
 
 class Signin extends React.Component{
     render(){
@@ -18,15 +19,15 @@ class Signin extends React.Component{
                     <div style = {{marginBottom:'10vh'}}>
                         <Input label = "Password"/>
                     <div className = "forgot--password">
-                        <p className = "signin--link">
+                        <Typography component="legend"  className = "signin--link">
                             Forgot Password?
-                        </p>
+                        </Typography>
                     </div>
                 </div>
                     <Button>Log In</Button>        
-                    <div className = "forgot--password">
+                    <Typography component="legend"  className = "forgot--password">
                         Don't have an account? &#160;<Link to="/signup" className = "signin--link">Sign up</Link>
-                    </div>
+                    </Typography>
                 </form>
             </div>
         )
