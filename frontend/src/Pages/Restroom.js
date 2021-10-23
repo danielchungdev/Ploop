@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '../Components/Navbar'
 
 class Restroom extends React.Component{
     render(){
         return(<div>
-            rest room
+            <Navbar/>
         </div>)
     }
 }
