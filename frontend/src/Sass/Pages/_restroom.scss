@@ -1,0 +1,40 @@
+.restroom--page--container{
+display:flex;
+
+align-items: center;
+
+
+flex-direction: column;
+
+width:100vw;
+}
+
+
+.restroom--toilet{
+    width:50vw;
+    object-fit: contain;
+
+    margin-top:4vh;
+    margin-bottom:2vh;
+ }
+
+
+
+.restroom--ratings{
+    margin:4vh 0vh 4vh 0vh;
+
+}
+
+
+.restroom--info{
+     font-size:18px;
+     font-weight:500;
+
+     padding:.5vh 0vh .5vh 0vh;
+
+     display:flex;
+     flex-direction: row;
+
+
+     align-items: center;
+ }
