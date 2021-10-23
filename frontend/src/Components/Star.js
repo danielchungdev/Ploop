@@ -8,14 +8,20 @@ import '../Sass/main.scss'
 
 export default function Star(props){
     let ssize = ""
+    let ssrc = StarFilled
     if(props.size==="small"){
         ssize = "2vh"
     }
     else{
         ssize = "4vh"
     }
+
+    if(props.filled == false){
+        ssrc = StarBlank
+    }
+    
     return(
-        <img src = {StarFilled} alt = "star" className = "star" style = {{width:ssize}}/>
+        <img src = {ssrc} alt = "star" className = "star" style = {{width:ssize}}/>
     )
 }
 

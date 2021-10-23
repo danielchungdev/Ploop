@@ -2,6 +2,9 @@ import React from 'react'
 import RestroomCard from '../Components/RestroomCard'
 import Navbar from '../Components/Navbar'
 import Button from '../Components/Button'
+
+import {Link} from 'react-router-dom'
+
 class Home extends React.Component{
     
     componentDidMount(){
@@ -23,7 +26,7 @@ class Home extends React.Component{
         return(<div>
             <Navbar/>
             <div class="home--container">
-                <Button>Rate a Restroom</Button>
+                <Link to="/create-restroom" style = {{textDecoration:'none'}}><Button>Rate a Restroom</Button></Link>
                 <p className="home--title">Nearby bathrooms</p>
                 <div class="restrooms--near">
                     <RestroomCard distance="10m away" stars="*" id = "1"/>
