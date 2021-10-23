@@ -13,9 +13,7 @@ class Signin extends React.Component{
         return(
         <div className = "signin--container" >
 
-
             <img src={logo} alt="Ploop Logo"  className="signin--logo"/>
-
 
 <form>
             <Input label = "Username"/>
