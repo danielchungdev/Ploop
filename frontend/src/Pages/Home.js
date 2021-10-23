@@ -1,13 +1,11 @@
 import React from 'react'
-import RestroomCard from '../components/RestroomCard'
-import Button from '../components/Button'
+import RestroomCard from '../Components/RestroomCard'
 
 class Home extends React.Component{
     render(){
         return(<div>
             home
             <RestroomCard/>
-            <Button>Log in</Button>
         </div>)
     }
 }
