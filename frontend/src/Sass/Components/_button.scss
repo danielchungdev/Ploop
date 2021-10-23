@@ -1,13 +1,26 @@
 .button{
     background-color: #7F5F20;
     
-    width: 80vw;
-
     margin: auto;
 
-    text-align: center;
-
+    width: 80vw;
     height: 6vh;
 
-    vertical-align: middle;
+    border-radius: 12px;
+
+    display:flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 18px;
+
+    color: white;
+
+    user-select: none;
+
+    font-weight: 500;
+
 }
