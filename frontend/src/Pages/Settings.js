@@ -3,6 +3,8 @@ import Navbar from '../Components/Navbar'
 import Input from '../Components/Input'
 import Button from '../Components/Button'
 
+import { Typography } from '@material-ui/core'
+
 class Settings extends React.Component{
     render(){
         return(<div>
@@ -12,8 +14,8 @@ class Settings extends React.Component{
             <div className="settings--box">
                 <img className = "settings--img" src = "https://img.icons8.com/ios/50/000000/full-of-shit.png" alt = "profile picture"/>
                 <div style = {{margin:'2vh'}}>
-                    <p className = "settings--name">Brandon Lu</p>
-                    <p className= "settings--gender">Male</p>
+                    <Typography component="legend"  className = "settings--name">Brandon Lu</Typography>
+                    <Typography component="legend"  className= "settings--gender">Male</Typography>
                 </div>
             </div>
 
