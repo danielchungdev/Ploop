@@ -1,8 +1,19 @@
 
 .restroom--container{
+    display: grid;
+    width: 45vw;
+    height: 45vw;
     background-color: $accent-color;
+    align-content: center;
+    border-radius: 10px;
 }
 
 .toilet--image{
-    width: 10%;
+    width: 70%;
+    justify-self: center;
+}
+
+.restroom--container p {
+    color: white;
+    justify-self: center;
 }
