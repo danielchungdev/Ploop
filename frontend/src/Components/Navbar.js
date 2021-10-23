@@ -7,9 +7,12 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail'
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import logo from '../Assets/Ploop.svg'
+import LogoutIcon from '@mui/icons-material/Logout'
+import HomeIcon from '@mui/icons-material/Home'
+import SettingsIcon from '@mui/icons-material/Settings'
+import {Link} from 'react-router-dom';
+import '../Sass/main.scss'
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -25,35 +28,39 @@ export default function TemporaryDrawer() {
   };
 
   const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+    <Box m={2} pt={3}
+        sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+        <List>
+            {[{title: 'Home', Path: '/'}, {title: 'Settings', Path: '/settings'}].map((item, index) => (
+                <Link className="navbar-links" to={item.Path}>
+                    <ListItem button key={item.title}>
+                        <ListItemIcon>
+                        {index % 2 === 0 ? <HomeIcon /> : <SettingsIcon />}
+                        </ListItemIcon>
+                        <ListItemText primary={item.title} />
+                    </ListItem>
+                </Link>
+            ))}
+        </List>
+        <Divider />
+        <List>
+            {[{title: "Logout", Path: "/logout"}].map((item, index) => (
+                <Link className="navbar-links" to={item.Path}>
+                    <ListItem button key={item.title}>
+                        <ListItemIcon>
+                        {<LogoutIcon />}
+                        </ListItemIcon>
+                        <ListItemText primary={item.title} />
+                    </ListItem>
+                </Link>
+            ))}
+        </List>
     </Box>
-  );
+  );    
 
   return (
     <div className="navbar--container">
