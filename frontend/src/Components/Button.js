@@ -13,9 +13,9 @@ class Button extends React.Component{
         let background = this.props.background;
 
         return(
-            <div  className = "button" style = {{backgroundColor:background}}>
+            <button  className = "button" style = {{backgroundColor:background}}>
                 <Typography component = "legend" className = "text">{Text}</Typography>
-            </div>
+            </button>
         )
     }
 }

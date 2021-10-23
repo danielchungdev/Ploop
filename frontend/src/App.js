@@ -18,7 +18,14 @@ import Settings from './Pages/Settings.js'
 import Signin from './Pages/Signin.js'
 import Signup from './Pages/Signup.js'
 
+import axos from 'axios'
+import axios from 'axios';
+
+
+
 function App() {
+
+
   return (
     <Router>
       <Switch>

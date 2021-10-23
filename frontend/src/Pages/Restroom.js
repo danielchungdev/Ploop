@@ -65,20 +65,11 @@ class Restroom extends React.Component{
                 </div>
             </Typography>
 
-            {/***Lighting */}
-            <Typography component="legend"  className = "restroom--info">Lighting 
-                <div className = "star--display">
-                    <Star size = "small"/>
-                    <Star size = "small"/>
-                    <Star size = "small"/>
-                    <Star size = "small"/>
-                    <Star size = "small"/>
-                </div>
-            </Typography>
+           
 
-            <Typography component="legend"  className = "restroom--info">Blowdrying: yes</Typography>
-            <Typography component="legend"  className = "restroom--info">Baby Station: yes</Typography>
-            <Typography component="legend"  className = "restroom--info">Visits: 0</Typography>
+            <Typography component="legend"  className = "restroom--info">Blowdrying: Yes</Typography>
+            <Typography component="legend"  className = "restroom--info">Baby Station: Yes</Typography>
+            <Typography component="legend"  className = "restroom--info">Reviews: 0</Typography>
 
         <Typography component="legend"  className = "restroom--info" style = {{marginTop:'4vh'}}>
             Comments
