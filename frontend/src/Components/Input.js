@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Sass/main.scss'
+import { Typography } from '@mui/material';
 
 class Input extends React.Component{
     constructor(props){
@@ -11,7 +12,7 @@ class Input extends React.Component{
        return(
             <div className = "input-container">
                 <div>
-                <p className = "label">{label}</p>
+                <Typography component="legend" >{label}</Typography>
                 <input className = "input" type = "text" />
                 </div>
             </div>

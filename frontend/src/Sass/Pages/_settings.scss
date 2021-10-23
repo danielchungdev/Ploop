@@ -1,0 +1,50 @@
+.settings--container{
+    display:flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 6vh;
+
+    margin-bottom: 6vh;
+}
+
+.settings--box{
+    width:100vw;
+    height:25vh;
+    margin-top:5vh;
+
+    background-color: #AA9468;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.settings--img{
+    width:20vw;
+    height:20vw;
+    border-radius: 50%;
+
+    padding:10px;
+    
+    background-color: #bfbfbf;
+
+    object-fit: cover;
+}
+
+.settings--name{
+    font-size:28px;
+    color:white;
+
+}
+
+.settings--gender{
+    font: size 18px;
+    color:white;
+
+    margin-top:1vh;
+}
+
