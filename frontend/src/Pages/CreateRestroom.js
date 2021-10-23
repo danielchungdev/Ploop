@@ -48,9 +48,12 @@ export default function CreateRestroom() {
 
                     <div>
                         <Typography component="legend">Crowdiness</Typography>
-                        <Slider value={crowdiness} onChange={handleSlider}/>
+                        <Slider sx={{color: "#7F5F20" }} value={crowdiness} onChange={handleSlider}/>
                     </div>
 
+                    <div>
+                        
+                    </div>
                 </form>
             </div>
         </div>
