@@ -28,11 +28,9 @@ class Home extends React.Component{
                 <div class="restrooms--near">
                     <RestroomCard distance="10m away" stars="*" id = "1"/>
                     <RestroomCard distance="10m away" stars="*****" id = "5"/>
-
                     <RestroomCard distance="10m away" stars="**" id = "2221"/>
                     <RestroomCard distance="10m away" stars="****" id = "331"/>
                     <RestroomCard distance="10m away" stars="***" id = "21"/>
-
                 </div>
             </div>
         </div>)
