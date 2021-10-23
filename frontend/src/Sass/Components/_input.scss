@@ -1,0 +1,47 @@
+.input-container{
+     display:flex;
+
+     flex-direction: column;
+
+     justify-content: center;
+     align-items: center;
+
+}
+
+
+.input{
+     border:none;
+     width: 80vw;
+     height: 4vh;
+     background-color: #ededed;
+
+     border-radius: 10px;
+
+
+}
+
+input:focus, input:focus{
+     outline:none;
+}
+
+
+
+input[type=text], textarea{
+     font-size:14px;
+     padding:6px;
+     resize:auto;
+
+     padding-left: 12px;
+}
+
+
+
+.label{
+     font-size:18px;
+     
+     user-select: none;
+
+     margin-bottom:1vh;
+     margin-left:1vh;
+
+}
