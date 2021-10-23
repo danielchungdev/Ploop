@@ -8,8 +8,10 @@ class Button extends React.Component{
 
     render(){
         let Text = this.props.children;
+        let background = this.props.background;
+
         return(
-            <div className = "button">
+            <div className = "button" style = {{backgroundColor:background}}>
                 <p className = "text">{Text}</p>
             </div>
         )
