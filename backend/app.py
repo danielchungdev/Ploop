@@ -9,7 +9,8 @@ from database import (
   # Bathroom Methods
   get_bathrooms,
   get_bathroom,
-  add_bathroom
+  add_bathroom,
+  edit_bathroom
 )
 
 app = Flask(__name__)
@@ -85,6 +86,12 @@ def post_bathroom_route(bathroom_id):
 	except Exception:
 		return error_message("Insufficient Request Body"), 404
 	return added_bathroom
+
+@app.route("/api/bathroom/<int:bathroom_id>", methods=['POST'])
+def put_bathroom_route(bathroom_id):
+	request_data = request.get_json()
+	editted_bathroom = edit_bathroom(bathroom_id, request_data)
+	return editted_bathroom
 
 # -------------------------------------------------
 # Bathroom Review Routes
