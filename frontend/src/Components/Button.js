@@ -9,8 +9,8 @@ class Button extends React.Component{
     render(){
         let Text = this.props.children;
         return(
-            <div class = "button">
-                <p class = "text">{Text}</p>
+            <div className = "button">
+                <p className = "text">{Text}</p>
             </div>
         )
     }
