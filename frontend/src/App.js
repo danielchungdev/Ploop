@@ -49,7 +49,7 @@ function App() {
 
 
         {/** Restroom Page*/}
-        <Route path = "/restroom">
+        <Route path = "/:id">
           <Restroom/>
         </Route>
       </Switch>

@@ -26,12 +26,12 @@ class Home extends React.Component{
                 <Button>Rate a Restroom</Button>
                 <p className="home--title">Nearby bathrooms</p>
                 <div class="restrooms--near">
-                    <RestroomCard distance="10m away" stars="*"/>
-                    <RestroomCard distance="10m away" stars="*****"/>
+                    <RestroomCard distance="10m away" stars="*" id = "1"/>
+                    <RestroomCard distance="10m away" stars="*****" id = "5"/>
 
-                    <RestroomCard distance="10m away" stars="**"/>
-                    <RestroomCard distance="10m away" stars="****"/>
-                    <RestroomCard distance="10m away" stars="***"/>
+                    <RestroomCard distance="10m away" stars="**" id = "2221"/>
+                    <RestroomCard distance="10m away" stars="****" id = "331"/>
+                    <RestroomCard distance="10m away" stars="***" id = "21"/>
 
                 </div>
             </div>

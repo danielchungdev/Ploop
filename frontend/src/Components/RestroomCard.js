@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function RestroomCard(props) {
 
     return (
-        <Link className='restroom-card'>
+        <Link className='restroom-card' to = {`/${props.id}`}>
             <div className="restroom--container">
                 <img className="toilet--image" src={DefaultToilet} alt="Image of toilet"/>
                 <p>{props.distance}</p>
