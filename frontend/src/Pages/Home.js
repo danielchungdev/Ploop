@@ -11,13 +11,13 @@ export default function Home() {
 
     useEffect(()=>{
 
-        const user = localStorage.getItem("user");
-		if (user){
-			setUser(user);
-		}
-		else {
-			history.push("/signin");
-		}
+        // const user = localStorage.getItem("user");
+		// if (user){
+		// 	setUser(user);
+		// }
+		// else {
+		// 	history.push("/signin");
+		// }
 
         if ("geolocation" in navigator){
             console.log("available")

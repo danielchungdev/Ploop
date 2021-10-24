@@ -1,20 +1,37 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Input from '../Components/Input'
 import '../Sass/main.scss'
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import { Slider, RadioGroup, FormControlLabel, Radio } from '@mui/material'
 import Button from '../Components/Button'
+import { v4 as uuidv4 } from 'uuid';
+import { useHistory } from 'react-router-dom'
 
 export default function CreateRestroom() {
+    let id = uuidv4();
+
+    const [longitude, setLongitude] = useState(0)
+    const [latitude, setLatitude] = useState(0)
     const [name, setName] = useState("")
     const [cleanliness, setCleanliness] = useState(1);
     const [ambience, setAmbience] = useState(1);
     const [crowdiness, setCrowdiness] = useState(50)
     const [dryingValue, setDryingValue] = useState(0)
     const [babyStation, setBabyStation] = useState(0)
+
+    useEffect(()=>{
+        if ("geolocation" in navigator){
+            navigator.geolocation.getCurrentPosition(
+                function (position){
+                    setLongitude(position.coords.longitude)
+                    setLatitude(position.coords.latitude)
+                }
+            )
+        }
+    }, [])
 
     const handleSlider = (event, newValue) => {
         setCrowdiness(newValue)
@@ -33,13 +50,35 @@ export default function CreateRestroom() {
     }
 
     const submitForm = () => {
-        console.log(cleanliness)
-        console.log(ambience)
-        console.log(crowdiness)
-        console.log(dryingValue)
-        console.log(babyStation)
-        alert("I've been clicked")
+        if (name !== ""){
+            fetch('/api/bathroom/' + id.toString(), {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json", 
+                },
+                body: {
+                    name: name,
+                    cleanliness: cleanliness,
+                    ambience: ambience,
+                    crowdiness: crowdiness,
+                    drying: dryingValue,
+                    baby: babyStation,
+                    longitude: longitude,
+                    latitude: latitude
+                }
+            })
+            .then((res)=>{
+                if (res.status === 200){
+                    history.push("/");
+                } 
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
+        }
     }
+
+    const history = useHistory();
 
     return (
         <div>

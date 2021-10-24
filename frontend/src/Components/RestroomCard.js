@@ -7,7 +7,7 @@ import Restroom from '../Pages/Restroom'
 
 
 export default function RestroomCard(props) {
-
+    
     return (
         <Link className='restroom-card' to = {`/${props.id}`} >
             <div className="restroom--container">

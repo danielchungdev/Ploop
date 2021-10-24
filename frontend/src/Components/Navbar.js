@@ -14,10 +14,8 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import {Link, useHistory} from 'react-router-dom';
 import { UserContext } from '../UserContext';
 import '../Sass/main.scss'
-import useContext from 'react';
 
 export default function TemporaryDrawer() {
-  const {user, setUser} = useContext(UserContext);
 
   const [state, setState] = React.useState({
     left: false,
@@ -32,9 +30,8 @@ export default function TemporaryDrawer() {
   };
 
   const logout= () => {
-    setUser("")
     localStorage.clear();
-    history.push()
+    history.push("/signin")
   }
 
   const history = useHistory();
