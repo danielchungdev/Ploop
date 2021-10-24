@@ -11,10 +11,12 @@ import logo from '../Assets/Ploop.svg'
 import LogoutIcon from '@mui/icons-material/Logout'
 import HomeIcon from '@mui/icons-material/Home'
 import SettingsIcon from '@mui/icons-material/Settings'
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import { UserContext } from '../UserContext';
 import '../Sass/main.scss'
 
 export default function TemporaryDrawer() {
+
   const [state, setState] = React.useState({
     left: false,
   });
@@ -26,6 +28,13 @@ export default function TemporaryDrawer() {
 
     setState({ ...state, [anchor]: open });
   };
+
+  const logout= () => {
+    localStorage.clear();
+    history.push("/signin")
+  }
+
+  const history = useHistory();
 
   const list = (anchor) => (
     <Box m={2} pt={3}
@@ -48,15 +57,13 @@ export default function TemporaryDrawer() {
         </List>
         <Divider />
         <List>
-            {[{title: "Logout", Path: "/logout"}].map((item, index) => (
-                <Link className="navbar-links" to={item.Path}>
-                    <ListItem button key={item.title}>
+            {[{title: "Logout"}].map((item, index) => (
+                    <ListItem button key={item.title} onClick={logout}>
                         <ListItemIcon>
                         {<LogoutIcon />}
                         </ListItemIcon>
                         <ListItemText primary={item.title} />
                     </ListItem>
-                </Link>
             ))}
         </List>
     </Box>
@@ -73,7 +80,6 @@ export default function TemporaryDrawer() {
                 sx={{
                     fontSize: "300%",
                     color: "#7F5F20",
-                    
                 }}>
                     =
             </Button>

@@ -3,7 +3,7 @@ import RestroomCard from '../Components/RestroomCard'
 import Navbar from '../Components/Navbar'
 import { Typography } from '@material-ui/core'
 import { UserContext } from '../UserContext';
-import {Link, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 export default function Home() {
 
@@ -11,13 +11,13 @@ export default function Home() {
 
     useEffect(()=>{
 
-        const user = localStorage.getItem("user");
-		if (user){
-			setUser(user);
-		}
-		else {
-			history.push("/signin");
-		}
+        // const user = localStorage.getItem("user");
+		// if (user){
+		// 	setUser(user);
+		// }
+		// else {
+		// 	history.push("/signin");
+		// }
 
         if ("geolocation" in navigator){
             console.log("available")

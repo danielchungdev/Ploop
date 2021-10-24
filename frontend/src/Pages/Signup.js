@@ -12,6 +12,8 @@ export default function Signup() {
     const [gender, setGender] = useState("0")
     const [email, setEmail] = useState("")
 
+    const [error, setError] = useState(false)
+
     const handleGenderChange = (event) => {
         setGender(event.target.value)
     }
@@ -44,10 +46,29 @@ export default function Signup() {
 
     const createAccount = () => {
         if (checkPassword() && checkEmailValid()){
-            //Post TODO backend info
-
-            alert("user created")
-            history.push("/signin")
+            fetch("/api/register/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json", 
+                },
+                body: {
+                    "username": username,
+                    "password": password,
+                    "email": email,
+                    "gender": gender
+                }
+            })
+            .then((res)=>{
+                if (res.status === 404){
+                    setError(true)
+                }
+                if (res.status === 200){
+                    history.push("/signin");
+                }
+                
+            }).catch((error)=>{
+                console.log(error)
+            })
         }
         else{
             alert("woops there's been an error")
@@ -80,9 +101,9 @@ export default function Signup() {
                             name="radio-buttons-group"
                             onChange={handleGenderChange}
                         >
-                        <FormControlLabel value="0" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Paper" />
-                        <FormControlLabel value="1" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Dryer" />
-                        <FormControlLabel value="2" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="None" />
+                        <FormControlLabel value="0" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Male" />
+                        <FormControlLabel value="1" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Female" />
+                        <FormControlLabel value="2" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Other" />
                     </RadioGroup>
 
                     <Typography component="legend">Email</Typography>
