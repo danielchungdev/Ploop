@@ -44,7 +44,21 @@ export default function Signup() {
 
     const createAccount = () => {
         if (checkPassword() && checkEmailValid()){
-            //Post TODO backend info
+            fetch("/api/register/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json", 
+                },
+                body: {
+                    "username": username,
+                    "password": password,
+                    "email": email,
+                    "gender": gender
+                }
+            })
+            .then((res)=>{
+                
+            })
 
             alert("user created")
             history.push("/signin")
@@ -80,9 +94,9 @@ export default function Signup() {
                             name="radio-buttons-group"
                             onChange={handleGenderChange}
                         >
-                        <FormControlLabel value="0" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Paper" />
-                        <FormControlLabel value="1" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Dryer" />
-                        <FormControlLabel value="2" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="None" />
+                        <FormControlLabel value="0" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Male" />
+                        <FormControlLabel value="1" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Female" />
+                        <FormControlLabel value="2" control={<Radio sx={{color: "#7F5F20", '&.Mui-checked':{color: "#7F5F20"}}}/>} label="Other" />
                     </RadioGroup>
 
                     <Typography component="legend">Email</Typography>
