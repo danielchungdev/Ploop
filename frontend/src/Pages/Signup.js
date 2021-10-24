@@ -30,7 +30,7 @@ export default function Signup() {
         }
     }
 
-    const checkEmailValid () => {
+    const checkEmailValid = () => {
         //check if email is valid
         // return true or false
     }
