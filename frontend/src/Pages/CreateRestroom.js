@@ -51,6 +51,7 @@ export default function CreateRestroom() {
 
     const submitForm = () => {
         if (name !== ""){
+            alert("clicked")
             fetch('/api/bathroom/' + id.toString(), {
                 method: "POST",
                 headers:{
@@ -68,6 +69,7 @@ export default function CreateRestroom() {
                 }
             })
             .then((res)=>{
+                console.log(res)
                 if (res.status === 200){
                     history.push("/");
                 } 
@@ -86,10 +88,11 @@ export default function CreateRestroom() {
             <div class="create--container">
                 <form action="submit" className="create--form">
                     <div>
-                        <Input label="Location Name" onChange={bathroomName}/>
+                        <Typography component="legend">Bathroom Name</Typography>
+                        <input className = "input" onChange={e=>setName(e.target.value)}/>
                     </div>
                     <div>
-                    <Typography component="legend">Cleanliness {name}</Typography>
+                    <Typography component="legend">Cleanliness</Typography>
                     <Rating
                         name="simple-controlled"
                         value={cleanliness}
