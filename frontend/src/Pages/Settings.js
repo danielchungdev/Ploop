@@ -5,8 +5,7 @@ import Button from '../Components/Button'
 
 import { Typography } from '@material-ui/core'
 
-class Settings extends React.Component{
-    render(){
+export default function Settings(){
         return(<div>
             <Navbar/>
 
@@ -40,10 +39,7 @@ class Settings extends React.Component{
 </form>
 
 
-
-
             </div>
         </div>)
     }
-}
-export default Settings
+

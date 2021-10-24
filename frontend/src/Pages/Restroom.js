@@ -12,8 +12,7 @@ import '../Sass/main.scss'
 
 
 
-class Restroom extends React.Component{
-    render(){
+export default function Restroom(){
         return(
         <div>
             <Navbar/>
@@ -80,5 +79,4 @@ class Restroom extends React.Component{
     </div>
 </div>)
     }
-}
-export default Restroom
+
