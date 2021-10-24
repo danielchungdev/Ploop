@@ -4,25 +4,12 @@
     width: 80vw;
     height: 6vh;
     border-radius: 10px;
-    display:flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:2vh;
-
+    color: white;
     border: none;
 }
 
-
-
-
-
-.text {
-    font-size: 18px;
-    font-weight: 500;
-
-    color: white;
-
-    user-select: none;
-
-    margin:auto;
+.button:hover{
+    background-color: #a17d34;
 }
