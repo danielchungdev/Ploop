@@ -46,16 +46,16 @@ export default function Signup() {
 
     const createAccount = () => {
         if (checkPassword() && checkEmailValid()){
-            fetch("/api/register/user", {
+            fetch("http://localhost:5000/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json", 
                 },
                 body: {
-                    "username": username,
-                    "password": password,
-                    "email": email,
-                    "gender": gender
+                    "Username": username,
+                    "Password": password,
+                    "Email": email,
+                    "Gender": gender
                 }
             })
             .then((res)=>{
