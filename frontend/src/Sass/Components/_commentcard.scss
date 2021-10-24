@@ -1,14 +1,9 @@
 .comment--card--container{
     width:70vw;
     min-height:10vh;
-
     padding:5vw;
-
     border-radius:10px;
-
     background-color: $accent-color;
-
-
     display:flex;
     align-items: last baseline;
     justify-content: space-between;
@@ -17,12 +12,9 @@
 
 .comment--image{
     border-radius: 50%;
-    
     width:9vw;
     height:9vw;
-
     padding:1vh;
-
     background-color: #bfbfbf;
 
 
@@ -30,8 +22,6 @@
 
 .comment-text{
     color:white;
-
     width:70%;
-
     font-size:14px;
 }
