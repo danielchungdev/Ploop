@@ -84,6 +84,17 @@ def register_user():
 	password = request_body["password"]
 	email = request_body["email"]
 	gender = request_body["gender"]
+	user_exists = get_user(username)
+	if user_exists == None:
+		response = Response(status=200)
+		add_user(username, {
+			"password" : password,
+			"email" : email,
+			"gender" : gender
+		})
+		return response
+	else:
+		return Response(status=404)
 
 
 # -------------------------------------------------
