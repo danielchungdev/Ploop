@@ -3,7 +3,7 @@ import RestroomCard from '../Components/RestroomCard'
 import Navbar from '../Components/Navbar'
 import { Typography } from '@material-ui/core'
 import { UserContext } from '../UserContext';
-import {Link, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 export default function Home() {
 
