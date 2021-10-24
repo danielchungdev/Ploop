@@ -1,15 +1,24 @@
-import React from 'react'
+import React, {useEffect, useContext} from 'react'
 import RestroomCard from '../Components/RestroomCard'
 import Navbar from '../Components/Navbar'
-import Button from '../Components/Button'
-
 import { Typography } from '@material-ui/core'
+import { UserContext } from '../UserContext';
+import {Link, useHistory} from 'react-router-dom'
 
-import {Link} from 'react-router-dom'
+export default function Home() {
 
-class Home extends React.Component{
-    
-    componentDidMount(){
+    const {user, setUser} = useContext(UserContext);
+
+    useEffect(()=>{
+
+        const user = localStorage.getItem("user");
+		if (user){
+			setUser(user);
+		}
+		else {
+			history.push("/signin");
+		}
+
         if ("geolocation" in navigator){
             console.log("available")
             navigator.geolocation.getCurrentPosition(
@@ -19,16 +28,23 @@ class Home extends React.Component{
                 }
             )
         }
-        else{
-            console.log("unavailable")
-        }
+    }, [])
+
+    const handleClick = () => {
+        //Sending to the API a POST with the coordinates.
+        //if api returns exists
+        //then give the option to rate
+        //else create restroom
+        history.push("/create-restroom")
     }
 
-    render(){
-        return(<div>
+    const history = useHistory()
+
+    return (
+        <div>
             <Navbar/>
             <div class="home--container">
-                <Link to="/create-restroom" style = {{textDecoration:'none'}}><Button>Rate a Restroom</Button></Link>
+                <button className = "button" onClick={handleClick}>Rate Bathroom</button>
                 <Typography component="legend"  className="home--title">Nearby bathrooms</Typography>
                 <div class="restrooms--near">
                     <RestroomCard distance="10m away" stars="*" id = "1"/>
@@ -38,7 +54,6 @@ class Home extends React.Component{
                     <RestroomCard distance="10m away" stars="***" id = "21"/>
                 </div>
             </div>
-        </div>)
-    }
+        </div>
+    )
 }
-export default Home
