@@ -118,7 +118,6 @@ export default function CreateRestroom() {
                         <Typography component="legend">Drying Method</Typography>
                         <RadioGroup row
                             aria-label="Drying Method"
-                            defaultValue={dryingValue}
                             name="radio-buttons-group"
                             onChange={handleDryingChange}
                         >
@@ -132,7 +131,6 @@ export default function CreateRestroom() {
                         <Typography component="legend">Baby Station</Typography>
                         <RadioGroup row
                             aria-label="Drying Method"
-                            defaultValue={babyStation}
                             name="radio-buttons-group"
                             onChange={handleBabyChange}
                         >
