@@ -13,40 +13,27 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 //     client.close();
 //   });
 
+const MALE = 0
+const FEMALE = 1
+const OTHER = 2
+
 app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.get('/login/:username/:password', (req, res) => {
+    const username = req.params.username
+    const password = req.params.password
+  
+    
+  
+    res.send({
+      "username" : username,
+      "password" : password
+    });
+  });
 app.get('/signup', (req, res) => {
     console.log("I'M CALLED")
     // const { Username: userDB, Password: passwordDB, Email: emailDb, Gender: genderdb} = req.body;
@@ -62,4 +49,3 @@ app.get('/signup', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-
