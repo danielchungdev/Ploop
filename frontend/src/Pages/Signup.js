@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import '../Sass/main.scss'
-import Button from '../Components/Button'
-import Input from '../Components/Input'
-import { Slider, RadioGroup, FormControlLabel, Radio } from '@mui/material'
+import { RadioGroup, FormControlLabel, Radio } from '@mui/material'
 import { Typography } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 
