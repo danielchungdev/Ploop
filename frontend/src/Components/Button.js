@@ -1,6 +1,8 @@
 import React from 'react'
 import '../Sass/main.scss'
 
+import { Typography } from '@material-ui/core';
+
 class Button extends React.Component{
     constructor(props){
         super(props)
@@ -8,10 +10,12 @@ class Button extends React.Component{
 
     render(){
         let Text = this.props.children;
+        let background = this.props.background;
+
         return(
-            <div className = "button">
-                <p className = "text">{Text}</p>
-            </div>
+            <button  className = "button" style = {{backgroundColor:background}} onClick = {this.props.onClick}>
+                <Typography component = "legend" className = "text">{Text}</Typography>
+            </button>
         )
     }
 }

@@ -1,0 +1,36 @@
+.create--container{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.label{
+    margin: 0%;
+    padding: 0;
+}
+
+.stars--ratings{
+    margin-top: 5%;
+    font-size: 1.2rem;
+}
+
+.dv-star-rating label{
+    font-size: 2rem;
+}
+
+.create--form div{
+    margin-top: 5%;
+}
+
+.Mui-selected{
+    color: #7F5F20;
+}
+
+.MuiSlider-thumb{
+    color: #7F5F20;
+}
+
+.button-container{
+    margin-top: 25%;
+}

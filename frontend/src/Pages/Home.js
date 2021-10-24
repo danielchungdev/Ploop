@@ -2,6 +2,11 @@ import React from 'react'
 import RestroomCard from '../Components/RestroomCard'
 import Navbar from '../Components/Navbar'
 import Button from '../Components/Button'
+
+import { Typography } from '@material-ui/core'
+
+import {Link} from 'react-router-dom'
+
 class Home extends React.Component{
     
     componentDidMount(){
@@ -23,16 +28,14 @@ class Home extends React.Component{
         return(<div>
             <Navbar/>
             <div class="home--container">
-                <Button>Rate a Restroom</Button>
-                <p className="home--title">Nearby bathrooms</p>
+                <Link to="/create-restroom" style = {{textDecoration:'none'}}><Button>Rate a Restroom</Button></Link>
+                <Typography component="legend"  className="home--title">Nearby bathrooms</Typography>
                 <div class="restrooms--near">
                     <RestroomCard distance="10m away" stars="*" id = "1"/>
                     <RestroomCard distance="10m away" stars="*****" id = "5"/>
-
                     <RestroomCard distance="10m away" stars="**" id = "2221"/>
                     <RestroomCard distance="10m away" stars="****" id = "331"/>
                     <RestroomCard distance="10m away" stars="***" id = "21"/>
-
                 </div>
             </div>
         </div>)
