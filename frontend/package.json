@@ -48,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://ploop-flask-rest-api-ygrni7qaea-uk.a.run.app:5000"
+  "proxy": "http://ploop-flask-rest-api-ygrni7qaea-uk.a.run.app:5000/"
 }
